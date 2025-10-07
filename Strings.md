@@ -161,3 +161,26 @@ void main()
 ```
 ## 9. Write a program in C to count the total number of vowels or consonants in a string.
 ```c
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+        char str[]="sreenivasulu";
+        int i,vc=0,cc=0;
+        for(i=0;i<strlen(str);i++)
+        {
+                switch(str[i])
+                {
+                        case 'a': case 'e': case 'i': case 'o': case 'u':
+                        case 'A': case 'E': case 'I': case 'O': case 'U':
+                                vc++;
+                                break;
+                        default:
+                                cc++;
+                }
+        }
+        printf("Vowels count =%d\nconsonants count=%d\n",vc,cc);
+}
+```
+## 10. Write a program in C to find the maximum number of characters in a string.
+```c
