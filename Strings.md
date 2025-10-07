@@ -184,3 +184,35 @@ void main()
 ```
 ## 10. Write a program in C to find the maximum number of characters in a string.
 ```c
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void main()
+{
+        char str[40];
+        printf("Enter a string");
+        fgets(str,40,stdin);
+        int len=strlen(str);
+        int i=0,count[len];
+        while(i<len)
+                count[i++]=0;
+        int j,mc=0;
+        for(i=0;i<len;i++)
+        {
+                if(count[i]!=-1)
+                {
+                        int c=0;
+                        for(j=i;j<len;j++)
+                        {
+                                if(str[i]==str[j])
+                                {
+                                        c++;
+                                        count[j]=-1;
+                                }
+                        }
+                        if(mc<c)
+                                mc=c;
+                }
+        }
+        printf("Maximum number of characters is %d\n",mc);
+}
