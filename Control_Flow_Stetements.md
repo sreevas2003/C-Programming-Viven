@@ -460,4 +460,156 @@ void main()
         puts(s);
 }
 ```
-
+## 32.WRITE A C PROGRAM TO FIND THE POWER OF A NUMBER USING A FOR LOOP?
+```c
+//power of a num using for loop
+#include<stdio.h>
+void main()
+{
+        int i,res=1,base,power;
+        printf("Enter base and power : ");
+        scanf("%d%d",&base,&power);
+        for(i=1;i<=power;i++)
+                res*=base;
+        printf("%d power of %d is %d\n",base,power,res);
+}
+```
+## 33.WRITE A C PROGRAM TO FIND THE FACTORIAL OF A NUMBER USING A WHILE LOOP?
+```c
+#include<stdio.h>
+void main()
+{
+        int i=1,fact=1,n;
+        printf("Enter a number : ");
+        scanf("%d",&n);
+        while(i<=n)
+        {
+                fact*=i;
+                i++;
+        }
+        printf("factorial of %d is %d\n",n,fact);
+}
+```
+## 34.WRITE A C PROGRAM TO FIND THE GCD OF TWO NUMBERS USING A WHILE LOOP
+```c
+#include<stdio.h>
+void main()
+{
+        int a,b;
+        printf("Enter two Numbers : ");
+        scanf("%d%d",&a,&b);
+        printf("Gcd of %d and %d is : ",a,b);
+        while(a!=b)
+        {
+                if(a>b)
+                        a-=b;
+                if(b>a)
+                        b-=a;
+        }
+        printf("%d\n",a);
+}
+```
+## 35..WRITE A C PROGRAM TO FIND THE LCM OF TWO NUMBERS USING A FOR LOOP?
+```c
+#include<stdio.h>
+void main()
+{
+        int max,a,b;
+        printf("Enter two numbers : ");
+        scanf("%d%d",&a,&b);
+        max=(a>b)?a:b;
+        for(;1;max++)
+        {
+                if(max%a==0 && max%b==0)
+                        break;
+        }
+        printf("%d and %d lcm is %d\n",a,b,max);
+}
+```
+## 36.WRITE A C PROGRAM TO PRINT THE MULTIPLICATION TABLE OF A GIVEN NUMBER USING A FOR LOOP
+```c
+#include<stdio.h>
+void main()
+{
+        int i,num;
+        printf("Table number : ");
+        scanf("%d",&num);
+        for(i=1;i<=10;i++)
+        {
+                printf("%3d * %3d = %3d\n",num,i,num*i);
+        }
+}
+```
+## 37.WRITE A PROGRAM IN C TO PRINT THE ARMSTRONG NUMBERS BETWEEN 1 AND 1000 USING A FOR LOOP?
+```c
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+        int i,res,n,r,c;
+        printf("Armstrong numbers 1 to 1000 are : ");
+        for(i=1;i<1000;i++)
+        {
+                c=0;
+                n=i;
+                while(n)
+                {
+                        c++;
+                        n/=10;
+                }
+                n=i;
+                res=0;
+                while(n)
+                {
+                        r=n%10;
+                        res+=pow(r,c);
+                        n/=10;
+                }
+                if(i==res)
+                        printf("%d ",i);
+        }
+        printf("\n");
+}
+```
+## 38.WRITE A PROGRAM IN C TO IMPLEMENT A SIMPLE CALCULATOR USING SWITCH-CASE STATEMENTS?
+```c
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+        int a,b,c,ch;
+        while(1)
+        {
+                printf("1.add\n2.diff\n3.mul\n4.division\n5.rem\n6.exit\n");   
+                printf("Enter choice : ");
+                scanf("%d",&ch);
+                printf("Enter a and b : ");
+                scanf("%d%d",&a,&b);
+               
+                switch(ch)
+                {
+                        case 1: c=a+b;
+                                printf("sum is %d\n",c);
+                                break;
+                        case 2: c=a-b;
+                                printf("diffe is %d\n",c);
+                                break;
+                        case 3:
+                                c=a*b;
+                                printf("Mul is %d\n",c);
+                                break;
+                        case 4: c=a/b;
+                                printf("Division is %d\n",c);
+                                break;
+                        case 5: c=a%b;
+                                printf("Rem is %d\n",c);
+                                break;
+                        case 6: 
+                                exit(1);
+                        default:
+                                printf("Invalid invalid please enter valid choice\n");
+                }
+        }
+}
+```
+## 
