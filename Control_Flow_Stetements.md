@@ -42,6 +42,20 @@ void main()
                 printf("negative number\n");
 }
 ```
+## 4.LEAP YEAR OR NOT?
+```c
+#include<stdio.h>
+void main()
+{
+        int year;
+        printf("Enter any Year : ");
+        scanf("%d",&year);
+        if( year%4==0 && year%100!=0 ||year%400==0)
+                printf("%d is a leap year\n",year);
+        else
+                printf("%d is not a leap year\n",year);
+}
+```
 
 ## 10.FIND MINIMUM OR MAXIMUM BETWEEN TWO NUMBERS?
 ```c
@@ -609,6 +623,265 @@ void main()
                         default:
                                 printf("Invalid invalid please enter valid choice\n");
                 }
+        }
+}
+```
+## 39.WRITE A PROGRAM IN C TO CHECK WHETHER A GIVEN NUMBER IS A PALINDROME OR NOT USING WHILE LOOPS AND IF-ELSE STATEMENTS
+```c
+#include<stdio.h>
+void main()
+{
+        int num,rev=0,temp;
+        printf("Enter a Number : ");
+        scanf("%d",&num);
+        temp=num;
+        while(temp)
+        {
+                rev=rev*10+(temp%10);
+                temp/=10;
+        }
+        if(rev==num)
+                printf("%d is palindrome\n",num);
+        else
+                printf("%d is not palindrome\n",num);
+}
+```
+## 40.WRITE A PROGRAM IN C TO FIND THE SUM OF ELEMENTS IN THE LOWER TRIANGULAR MATRIX USING LOOPS AND IF-ELSE STATEMENTS
+```c
+#include<stdio.h>
+void main()
+{
+        int a[3][3]={1,4,7,2,5,8,3,6,9};
+        int i,j,sum=0;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<=i;j++)
+                {
+                        printf("%d ",a[i][j]);
+                        sum+=a[i][j];
+                }
+                printf("\n");
+        }
+        printf("Sum of Lower Matrix is : %d\n",sum);
+}
+```
+## 41.WRITE A PROGRAM IN C TO FIND THE SUM OF ELEMENTS IN THE UPPER TRIANGULAR MATRIX USING LOOPS AND IF-ELSE STATEMENTS?
+```c
+#include<stdio.h>
+void main()
+{
+        int a[3][3]={1,4,7,2,5,8,3,6,9};
+        int i,j,sum=0;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<=i;j++)
+                        printf("  ");
+                for(j=i;j<3;j++)
+                {
+                        printf("%d ",a[i][j]);
+                        sum+=a[i][j];
+                }
+                printf("\n");
+        }
+        printf("Sum of Upper triangle is : %d\n",sum);
+}
+```
+## 42.WRITE A PROGRAM IN C TO REMOVE DUPLICATE ELEMENTS FROM AN ARRAY
+```c
+//remove duplicate elements
+#include<stdio.h>
+void main()
+{
+        int a[10]={8,1,3,9,4,5,8,3,5,4};
+        int du,uni=0,i,j,temp[10];
+        for(i=0;i<10;i++)
+        {
+                du=0;
+                for(j=0;j<uni;j++)
+                {
+                        if(a[i]==a[j])
+                        {
+                                du=1;
+                                break;
+                        }
+                }
+                if(!du)
+                        temp[uni++]=a[i];
+
+        }
+        for(i=0;i<uni;i++)
+                a[i]=temp[i];
+        for(i=0;i<uni;i++)
+                printf("%d ",a[i]);
+}
+```
+## 43.WRITE A PROGRAM IN C TO SORT AN ARRAY OF INTEGERS IN ASCENDING ORDER
+```c
+#include<stdio.h>
+void main()
+{
+        int a[8]={8,75,96,25,15,45,36,69};
+        int i,j,temp;
+        for(i=0;i<8;i++)
+        {
+                for(j=i;j<8;j++)
+                {
+                        if(a[i]>a[j])
+                        {
+                                temp=a[i];
+                                a[i]=a[j];
+                                a[j]=temp;
+                        }
+                }
+        }
+        for(i=0;i<8;i++)
+                printf("%d ",a[i]);
+        printf("\n");
+}
+```
+## 44.WRITE A PROGRAM IN C TO SORT AN ARRAY OF INTEGERS IN DESCENDING ORDER
+```c
+#include<stdio.h>
+void main()
+{
+        int a[8]={23,54,76,87,13,49,98,37};
+        int i,j,temp;
+        for(i=0;i<8;i++)
+        {
+                for(j=i;j<8;j++)
+                {
+                        if(a[i]<a[j])
+                        {
+                                temp=a[i];
+                                a[i]=a[j];
+                                a[j]=temp;
+                        }
+                }
+        }
+        printf("Descending Order : ");
+        for(i=0;i<8;i++)
+                printf("%d ",a[i]);
+        printf("\n");
+}
+```
+## 45.WRITE A PROGRAM IN C TO FIND THE SECOND LARGEST ELEMENT IN AN ARRAY
+```c
+#include<stdio.h>
+void main()
+{
+        int a[8]={21,34,65,78,93,88,49,55};
+        int i,max,smax;
+        max=smax=a[0];
+        for(i=0;i<8;i++)
+        {
+                if(max<a[i])
+                        max=a[i];
+                if(smax<a[i] && max!=a[i])
+                        smax=a[i];
+        }
+        printf("Max=%d second max=%d\n",max,smax);
+}
+```
+## 46.WRITE A PROGRAM IN C TO FIND THE FREQUENCY OF EACH ELEMENT IN AN ARRAY
+```c
+#include<stdio.h>
+void main()
+{
+        int a[8]={23,54,23,76,87,54,65,23};
+        int freq,i=0;
+        int j,temp[8];
+        while(i<8)
+                temp[i++]=-1;
+
+        for(i=0;i<8;i++)
+        {
+                if(temp[i]==-1)
+                {
+                        freq=0;
+                        for(j=i;j<8;j++)
+                        {
+                                if(a[i]==a[j])
+                                {
+                                        freq++;
+                                        temp[j]=0;
+                                }
+                        }
+                        printf("%d is : %d\n",a[i],freq);
+                }
+        }
+}
+```
+## 47.WRITE A PROGRAM IN C TO CHECK WHETHER A MATRIX IS AN IDENTITY MATRIX
+```c
+#include<stdio.h>
+void main()
+{
+        int a[3][3]={1,0,0,0,1,0,0,0,1};
+        int i,j,flag=0;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        if(i==j)
+                        {
+                                if(a[i][j]!=1)
+                                {
+                                        flag=1;
+                                        break;
+                                }
+                        }
+                        else
+                        {
+                                if(a[i][j]!=0)
+                                {
+                                        flag=1;
+                                        break;
+                                }
+                        }
+                }
+        }
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                        printf("%d ",a[i][j]);
+                printf("\n");
+        }
+        if(flag==0)
+                printf("Given Matrix is Identity Matrix\n");
+        else
+                printf("Not Identity matrix\n");
+}
+```
+## 48.WRITE A C PROGRAM TO PRINT ALL THE ODD NUMBERS BETWEEN 1 TO 50 USING A FOR LOOP?
+```c
+#include<stdio.h>
+void main()
+{
+        int i;
+        printf("Odd Numbers between 1 to 50 : ");
+        for(i=1;i<50;i++)
+        {
+                if(i%2!=0)
+                        printf("%d ",i);
+        }
+        printf("\n");
+}
+```
+## 49.WRITE A PROGRAM IN C TO FIND THE SUM OF ELEMENTS IN EACH COLUMN OF A MATRIX 
+```c
+#include<stdio.h>
+void main()
+{
+        int a[3][3]={2,4,6,8,9,7,5,3,1};
+        int i,j,sum;
+        for(i=0;i<3;i++)
+        {
+                sum=0;
+                for(j=0;j<3;j++)
+                {
+                        sum+=a[j][i];
+                }
+                printf("%d column sum is %d\n",i+1,sum);
         }
 }
 ```
