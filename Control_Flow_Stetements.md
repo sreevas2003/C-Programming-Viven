@@ -56,7 +56,80 @@ void main()
                 printf("%d is not a leap year\n",year);
 }
 ```
+## 5.ELIGIBLE TO CAST VOTE or Not
+```c
+//eligible for vote
+#include<stdio.h>
+void main()
+{
+        int age;
+        printf("Enter age of the candidata : ");
+        scanf("%d",&age);
+        if(age>17)
+                printf("candidate is eligible for vote",\n);
+        else
+                printf("candidate is not eligible for vote",\n);
+}
+```
+## 6.WRITE A C PROGRAM TO READ THE VALUE OF AN INTEGER M AND DISPLAY THE VALUE OF N IS 1 WHEN M IS LARGER THAN 0, 0 WHEN M IS 0 AND -1 WHEN M IS LESS THAN 0.
+```c
+#include<stdio.h>
+void main()
+{
+        int n;
+        printf("Enter Element N : ");
+        scanf("%d",&n);
+        if(n>0)
+                printf("1\n");
+        else
+                printf("2\n");
+}
+```
+## 7.FIND THE LARGEST OF THREE NUMBERS
+```c
+#include<stdio.h>
+void main()
+{
+        int a,b,c;
+        printf("Enter Three Values");
+        scanf("%d%d%d",&a,&b,&c);
+        if(a>b && a>c)
+                printf("A is greater number\n");
+        else if(b>c)
+                printf("B is greater number\n");
+        else
+                printf("C is greater number\n");
+}
+```
+## 8.WRITE A C PROGRAM TO CHECK WHETHER A CHARACTER IS A VOWEL OR CONSONANT?
+```c
+#include<stdio.h>
+void main()
+{
+        char ch;
+        printf("Enter any element");
+        scanf("%c",&ch);
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+                printf("%c is Vowel\n",ch);
+        else
+                printf("%c is consonat\n",ch);
+}
+```
+## 9.CHECK WHETHER A CHARACTER IS AN ALPHABET OR NOT
+```c
+#include<stdio.h>
+void main()
+{
 
+        char ch;
+        printf("Enter any element : ");
+        scanf("%c",&ch);
+        if((ch>64 && ch<91) || (ch>96 && ch<123))
+               printf("%c is a Alphabet\n",ch);
+        else
+                printf("%c is a Non Alphabet\n",ch);
+}
+```
 ## 10.FIND MINIMUM OR MAXIMUM BETWEEN TWO NUMBERS?
 ```c
 #include<stdio.h>
@@ -885,4 +958,942 @@ void main()
         }
 }
 ```
-## 
+## 50.WRITE A PROGRAM IN C TO FIND THE SUM OF ELEMENTS IN EACH ROW OF A MATRIX
+```c
+//row sum
+#include<stdio.h>
+void main()
+{
+        int a[3][3]={1,9,2,8,3,7,4,6,5};
+        int i,j,sum;
+        for(i=0;i<3;i++)
+        {
+                sum=0;
+                for(j=0;j<3;j++)
+                {
+                        sum+=a[i][j];
+                }
+                printf("%d row of sum is %d\n",i+1,sum);
+        }
+}
+```
+## 51.WRITE A PROGRAM IN C TO ADD TWO MATRICES
+```c
+#include<stdio.h>
+void main()
+{
+        int mat1[3][3]={1,2,3,4,5,6,7,8,9},mat2[3][3]={9,8,7,6,5,4,3,2,1};
+        int i,j,mat3[3][3];
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        mat3[i][j]=mat1[i][j]+mat2[i][j];
+                }
+        }
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                        printf("%d ",mat3[i][j]);
+                printf("\n");
+        }
+}
+```
+## 52.WRITE A PROGRAM IN C TO SUBTRACT TWO MATRICES
+```c
+#include<stdio.h>
+void main()
+{
+        int mat1[3][3]={9,8,7,6,5,4,3,2,1};
+        int mat2[3][3]={1,2,3,4,5,6,7,8,9};
+        int i,j,mat3[3][3];
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        mat3[i][j]=mat1[i][j]-mat2[i][j];
+                }
+        }
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                        printf("%2d ",mat3[i][j]);
+                printf("\n");
+        }
+}
+```
+## 53.WRITE A PROGRAM IN C TO MULTIPLY TWO MATRICES
+```c
+#include<stdio.h>
+void main()
+{
+        int a[3][3]={2,3,4,5,6,7,8,9,1};
+        int b[3][3]={2,3,4,5,6,7,8,9,1};
+        int c[3][3],i,j,k;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        c[i][j]=0;
+                        for(k=0;k<3;k++)
+                        {
+                                c[i][j]+=a[i][k]*b[k][j];
+                        }
+                }
+        }
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                        printf("%d ",c[i][j]);
+        }
+}
+```
+## 54.WRITE A PROGRAM IN C TO PRINT THE ELEMENTS OF AN ARRAY IN REVERSE ORDER
+```c
+#include<stdio.h>
+void main()
+{
+        int a[10]={10,9,8,7,6,5,4,3,2,1};
+        int temp,i,j;
+        for(i=0,j=9;i<j;i++,j--)
+        {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+        }
+        for(i=0;i<10;i++)
+                printf("%d ",a[i]);
+}
+```
+## 55.WRITE A PROGRAM IN C TO CHECK WHETHER TWO ARRAYS ARE EQUAL OR NOT
+```c
+#include<stdio.h>
+void main()
+{
+        int s,i,flag=0;
+        printf("Enter size : ");
+        scanf("%d",&s);
+        int a[s],b[s];
+        for(i=0;i<s;i++)
+                scanf("%d",&a[i]);
+        for(i=0;i<s;i++)
+                scanf("%d",&b[i]);
+        for(i=0;i<s;i++)
+        {
+                if(a[i]!=b[i])
+                {
+                        flag=1;
+                        break;
+                }
+        }
+        if(flag==0)
+                printf("Two arrays are Equal\n");
+        else
+                printf("Not Equal\n");
+}
+```
+## 56.WRITE A PROGRAM IN C TO FIND THE UNION OF TWO ARRAYS
+```c
+#include<stdio.h>
+void main()
+{
+        int a[6]={1,2,3,4,5,6};
+        int b[4]={1,5,7,8};
+        int i,j,k=0,flag,temp[5];
+        for(i=0;i<6;i++)
+        {
+                flag=0;
+                for(j=0;j<4;j++)
+                {
+                        if(a[i]==b[j])
+                        {
+                                flag=1;
+                                break;
+                        }
+                }
+                if(flag==0)
+                        temp[k++]=a[i];
+        }
+        for(i=0;i<k;i++)
+                printf("%d ",temp[i]);
+        printf("\n");
+}
+```
+## 57.WRITE A PROGRAM IN C TO FIND THE INTERSECTION OF TWO ARRAYS
+```c
+#include<stdio.h>
+void main()
+{
+        int i,flag,j,k=0,a[5],b[4];
+        printf("Enter array A of 5 elements: ");
+        for(i=0;i<5;i++)
+                scanf("%d",&a[i]);
+        printf("Enter array B of 4 elemnts: ");
+        for(i=0;i<4;i++)
+                scanf("%d",&b[i]);
+        for(i=0;i<5;i++)
+        {
+                for(j=0;j<4;j++)
+                {
+                        if(a[i]==b[j])
+                                printf("%d ",a[i]);
+                }
+        }
+        printf("\n");
+}
+```
+## 58.WRITE A PROGRAM IN C TO FIND THE DIFFERENCE OF TWO ARRAYS
+```c
+#include<stdio.h>
+void main()
+{
+        int mat1[3][3]={9,8,7,6,5,4,3,2,1};
+        int mat2[3][3]={1,2,3,4,5,6,7,8,9};
+        int i,j,mat3[3][3];
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                {
+                        mat3[i][j]=mat1[i][j]-mat2[i][j];
+                }
+        }
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                        printf("%2d ",mat3[i][j]);
+                printf("\n");
+        }
+}
+```
+## 59.WRITE A PROGRAM IN C TO FIND THE MISSING NUMBER IN AN ARRAY CONTAINING NUMBERS FROM 1 TO N
+```c
+#include<stdio.h>
+void main()
+{
+        int n,i;
+        printf("Enter size N : ");
+        scanf("%d",&n);
+        int act_sum,expt_sum;
+        act_sum=expt_sum=0;
+        for(i=1;i<=n;i++)
+                expt_sum+=i;
+        printf("Enter array elements %d : ",n-1);
+        int a[n-1];
+        for(i=0;i<n-1;i++)
+        {
+                scanf("%d",&a[i]);
+                act_sum+=a[i];
+        }
+        int mis=expt_sum-act_sum;
+        if(mis>0 && mis<n)
+                printf("Missing Number is : %d\n",mis);
+        else
+                printf("Not find\n");
+}
+```
+## 60.WRITE A PROGRAM IN C TO FIND THE MAJORITY ELEMENT IN AN ARRAY
+```c
+#include<stdio.h>
+void main()
+{
+        int a[8]={5,8,9,5,6,4,5,8};
+        int i=0,j,ele,c,pc=0;
+        int temp[8];
+        while(i<8)
+                temp[i++]=-1;
+        for(i=0;i<8;i++)
+        {
+                if(temp[j]==-1)
+                {
+                        c=0;
+                        for(j=0;j<8;j++)
+                        {
+                                if(a[i]==a[j])
+                                {
+                                        c++;
+                                        temp[j]=0;
+                                }
+                        }
+                        if(pc<c)
+                        {
+                                ele=a[i];
+                                pc=c;
+                        }
+                }
+        }
+        printf("Majority element is %d is %d times\n",ele,c);
+}
+```
+## 61.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS USING NESTED LOOPS?
+```c
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+                for(j=0;j<3;j++)
+                        printf("* ");
+                printf("\n");
+        }
+}
+```
+## 62.WRITE A C PROGRAM TO SEARCH FOR AN ELEMENT IN AN ARRAY USING LINEAR SEARCH AND A FOR LOOP
+```c
+#include<stdio.h>
+void main()
+{
+        int a[10]={1,4,5,2,7,9,0,8,6,3};
+        int i,se;
+        for(i=0;i<10;i++)
+                printf("%d ",a[i]);
+        printf("Enter search element : ");
+        scanf("%d",&se);
+        for(i=0;i<10;i++)
+        {
+                if(se==a[i])
+                {
+                        printf("Element found at %d index\n",i);
+                        break;
+                }
+        }
+}
+```
+## 63.WRITE A C PROGRAM TO CHECK WHETHER A GIVEN NUMBER IS A PALINDROME IN BOTH DECIMAL AND BINARY REPRESENTATIONS
+```c
+#include<stdio.h>
+void main()
+{
+        int num;
+        printf("Enter a Number : ");
+        scanf("%d",&num);
+        int rev=0,n=num;
+        while(n)
+        {
+                rev=rev*10+(n%10);
+                n/=10;
+        }
+        n=num;
+        int bin=0,r,re=0,a=1;
+        while(n)
+        {
+                r=n%2;
+                re=re+a*r;
+                a*=10;
+                n/=2;
+        }
+        n=re;
+        int br=0;
+        while(n)
+        {
+                br=br*10+(n%10);
+                n/=10;
+        }
+        if(num==rev && re==br)
+                printf("Both palindrome\n");
+        else
+                printf("Both not palindrome\n");
+
+}
+```
+## 64.WRITE A C PROGRAM TO FIND THE SUM OF FIRST N NATURAL NUMBERS WHICH ARE NOT DIVISIBLE BY 3 OR 5
+```c
+#include<stdio.h>
+void main()
+{
+        int i,sum=0,n;
+        printf("Enter N value : ");
+        scanf("%d",&n);
+        for(i=1;i<=n;i++)
+        {
+                if(i%3==0 || i%5==0)
+                        continue;
+                else
+                        sum+=i;
+        }
+        printf("Without 3 or 5 divisible\n1 to %d of Sum is %d\n",n,sum);
+}
+```
+## 65.WRITE A C PROGRAM TO FIND THE SUM OF ALL EVEN NUMBERS BETWEEN TWO GIVEN NUMBERS
+```c
+#include<stdio.h>
+void main()
+{
+        int i,sum=0,n;
+        printf("Enter N value : ");
+        scanf("%d",&n);
+        for(i=1;i<=n;i++)
+        {
+                if(i%2==0)
+                        sum+=i;
+        }
+        printf("Sum of even numbers b/w 1 to %d is : %d\n",n,sum);
+}
+```
+## 66.WRITE A C PROGRAM TO FIND THE SUM OF ALL ODD NUMBERS BETWEEN TWO GIVEN NUMBERS
+```c
+#include<stdio.h>
+void main()
+{
+        int i,n,sum=0;
+        printf("Enter N value : ");
+        scanf("%d",&n);
+        for(i=1;i<=n;i++)
+        {
+                if(i%2!=0)
+                        sum+=i;
+        }
+        printf("Odd sum of 1 to %d is %d\n",n,sum);
+}
+```
+## 67.WRITE A C PROGRAM TO CHECK WHETHER A GIVEN NUMBER IS A PERFECT SQUARE OR NOT
+```c
+//perfect square
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+        int num;
+        printf("Enter any Number : ");
+        scanf("%d",&num);
+        int n=sqrt(num);
+        if(n*n==num)
+                printf("%d is a perfect Number\n",num);
+        else
+                printf("%d is not perfect square\n",num);
+}
+```
+## 68.WRITE A C PROGRAM TO CALCULATE THE POWER OF A NUMBER
+```c
+//power of a num using for loop
+#include<stdio.h>
+void main()
+{
+        int i,res=1,base,power;
+        printf("Enter base and power : ");
+        scanf("%d%d",&base,&power);
+        for(i=1;i<=power;i++)
+                res*=base;
+        printf("%d power of %d is %d\n",base,power,res);
+}
+```
+## 69.WRITE A C PROGRAM TO FIND THE ASCII VALUE OF A CHARACTER
+```c
+#include<stdio.h>
+void main()
+{
+        char ch;
+        printf("Enter any character : ");
+        scanf("%c",&ch);
+        int a;
+        if(ch>64 && ch<91)
+                a=ch;
+        else if (ch>96 && ch<123)
+                a=ch;
+        else
+                printf("Invalid character\n");
+        printf("Ascii value is : %d\n",a);
+}
+```
+## 70.WRITE A C PROGRAM TO FIND THE AREA OF A CIRCLE GIVEN ITS RADIUS 
+```c
+#include<stdio.h>
+#define PI 3.14
+void main()
+{
+        int r;
+        float area;
+        printf("Enter radius : ");
+        scanf("%d",&r);
+        area = PI*r*r;
+        printf("Area of circle is %.2f\n",area);
+}
+```
+## 71.WRITE A C PROGRAM TO FIND THE SUM OF ALL PRIME NUMBERS BETWEEN 1 AND 1000
+```c
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+        int i,j,flag,sum=0;
+        printf("1 to 1000 Prime Numbers : ");
+        for(i=1;i<=1000;i++)
+        {
+                flag=0;
+                for(j=2;j<sqrt(i);j++)
+                {
+                        if(i%j==0)
+                        {
+                                flag=1;
+                                break;
+                        }
+                }
+                if(flag==0)
+                {
+                        sum+=i;
+                        printf("%d ",i);
+                }
+        }
+        printf("\n1 to 1000 prime number sum is : %d\n",sum);
+}
+```
+## 72.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A HOLLOW SQUARE SHAPE
+```c
+//hollow square shape
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        printf("Hollow Square Shape pattern : \n");
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4;j++)
+                {
+                        if(i==0 || i==3 || j==0 || j==3)
+                                printf("* ");
+                        else
+                                printf("  ");
+                }
+                printf("\n");
+        }
+}
+```
+## 73.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A RIGHT TRIANGLE SHAPE
+```c
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        printf("Enter right angle triangle shape : \n");
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                {
+                        printf("* ");
+                }
+                printf("\n");
+        }
+}
+```
+## 74.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A MIRRORED RIGHT TRIANGLE SHAPE
+```c
+//mirrored right angle shape
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4-i;j++)
+                        printf("  ");
+                for(j=0;j<=i;j++)
+                        printf("* ");
+                printf("\n");
+        }
+}
+```
+## 75.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A PYRAMID SHAPE
+```c
+//pyramid shape
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        printf("Pyramid shape : \n");
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4-i;j++)
+                        printf("  ");
+                for(j=0;j<=i;j++)
+                        printf("* ");
+                for(j=0;j<i;j++)
+                        printf("* ");
+                printf("\n");
+        }
+}
+```
+## 76.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A MIRRORED PYRAMID SHAPE
+```c
+//mirrored pyramid
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        printf("Mirrod pyramid shape : \n");
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                        printf("  ");
+                for(j=0;j<4-i;j++)
+                        printf("* ");
+                for(j=0;j<3-i;j++)
+                        printf("* ");
+                printf("\n");
+        }
+}
+```
+## 77.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A DIAMOND SHAPE
+```c
+//diamond shape
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        for(i=1;i<5;i++)
+        {
+                for(j=1;j<5-i;j++)
+                        printf("  ");
+                for(j=1;j<=i;j++)
+                        printf("* ");
+                for(j=1;j<i;j++)
+                        printf("* ");
+                printf("\n");
+        }
+        for(i=1;i<4;i++)
+        {
+                for(j=1;j<=i;j++)
+                        printf("  ");
+                for(j=1;j<=4-i;j++)
+                        printf("* ");
+                for(j=1;j<4-i;j++)
+                        printf("* ");
+                printf("\n");
+        }
+}
+```
+## 78.WRITE A C PROGRAM TO PRINT THE PATTERN OF STARS IN A HOLLOW DIAMOND SHAPE
+```c
+//hollow diamond shape
+#include<stdio.h>
+void main()
+{
+        int i,j,k=0;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4-i;j++)
+                        printf("  ");
+                for(j=0;j<=i;j++)
+                {
+                        if(j==0)
+                                printf("* ");
+                        else
+                                printf("  ");
+                }
+                for(j=0;j<=i;j++)
+                {
+                        if(j==k)
+                        {
+                                k++;
+                                printf("* ");
+                        }
+                        else
+                                printf("  ");
+                }
+                printf("\n");
+        }
+        k--;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                        printf("  ");
+                for(j=0;j<4-i;j++)
+                {
+                        if(j==0)
+                                printf("* ");
+                        else
+                                printf("  ");
+                }
+                for(j=0;j<=3-i;j++)
+                {
+                        if(j==k)
+                        {
+                                k--;
+                                printf("* ");
+                        }
+                        else
+                                printf("  ");
+                }
+                printf("\n");
+        }
+}
+```
+## 79.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A PYRAMID SHAPE
+```c
+//diamond shape numbers
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4-i;j++)
+                        printf("  ");
+                for(j=0;j<=i;j++)
+                        printf("%d ",j+1);
+                for(j=0;j<=i;j++)
+                        printf("%d ",j+1);
+                printf("\n");
+        }
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                        printf("  ");
+                for(j=0;j<4-i;j++)
+                        printf("%d ",j+1);
+                for(j=0;j<=3-i;j++)
+                        printf("%d ",j+1);
+                printf("\n");
+        }
+}
+```
+## 80.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A MIRRORED PYRAMID SHAPE
+```c
+//hollow diamond shape numbers
+#include<stdio.h>
+void main()
+{
+        int i,j,k=0;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4-i;j++)
+                        printf("  ");
+                for(j=0;j<=i;j++)
+                {
+                        if(j==0)
+                                printf("%d ",j);
+                        else
+                                printf("  ");
+                }
+                for(j=0;j<=i;j++)
+                {
+                        if(j==k)
+                        {
+                                k++;
+                                printf("%d ",j);
+                        }
+                        else
+                                printf("  ");
+                }
+                printf("\n");
+        }
+        k--;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                        printf("  ");
+                for(j=0;j<4-i;j++)
+                {
+                        if(j==0)
+                                printf("%d ",j);
+                        else
+                                printf("  ");
+                }
+                for(j=0;j<=3-i;j++)
+                {
+                        if(j==k)
+                        {
+                                k--;
+                                printf("%d ",j);
+                        }
+                        else
+                                printf("  ");
+                }
+                printf("\n");
+        }
+}
+```
+## 81.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A RIGHT TRIANGLE SHAPE
+```c
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        printf("Enter right angle triangle shape : \n");
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                {
+                        printf("%d ",j);
+                }
+                printf("\n");
+        }
+}
+```
+## 82.WRITE A C PROGRAM TO PRINT THE PATTERN OF NUMBERS IN A MIRRORED RIGHT TRIANGLE SHAPE
+```c
+
+//mirrored right angle shape
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4-i;j++)
+                        printf("  ");
+                for(j=0;j<=i;j++)
+                        printf("%d ",j);
+                printf("\n");
+        }
+}
+```
+## 83.WRITE A C PROGRAM TO PRINT THE PATTERN OF ALPHABETS IN A PYRAMID SHAPE
+```c
+
+//diamond shape
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        char ch='a';
+        for(i=1;i<5;i++)
+        {
+                for(j=1;j<5-i;j++)
+                        printf("  ");
+                for(j=1;j<=i;j++)
+                        printf("%c ",ch++);
+                for(j=1;j<i;j++)
+                        printf("%c ",ch++);
+                printf("\n");
+        }
+        for(i=1;i<4;i++)
+        {
+                for(j=1;j<=i;j++)
+                        printf("  ");
+                for(j=1;j<=4-i;j++)
+                        printf("%c ",ch++);
+                for(j=1;j<4-i;j++)
+                        printf("%c ",ch++);
+                printf("\n");
+        }
+}
+```
+## 84.WRITE A C PROGRAM TO PRINT THE PATTERN OF ALPHABETS IN A MIRRORED PYRAMID SHAPE
+```c
+//hollow diamond shape
+#include<stdio.h>
+void main()
+{
+        char ch='a';
+        int i,j,k=0;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<4-i;j++)
+                        printf("  ");
+                for(j=0;j<=i;j++)
+                {
+                        if(j==0)
+                                printf("%c ",ch++);
+                        else
+                                printf("  ");
+                }
+                for(j=0;j<=i;j++)
+                {
+                        if(j==k)
+                        {
+                                k++;
+                                printf("%c ",ch++);
+                        }
+                        else
+                                printf("  ");
+                }
+                printf("\n");
+        }
+        k--;
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                        printf("  ");
+                for(j=0;j<4-i;j++)
+                {
+                        if(j==0)
+                                printf("%c ",ch++);
+                        else
+                                printf("  ");
+                }
+                for(j=0;j<=3-i;j++)
+                {
+                        if(j==k)
+                        {
+                                k--;
+                                printf("%c ",ch++);
+                        }
+                        else
+                                printf("  ");
+                }
+                printf("\n");
+        }
+}
+```
+## 85.WRITE A C PROGRAM TO PRINT THE PATTERN OF ALPHABETS IN A RIGHT TRIANGLE SHAPE
+```c
+#include<stdio.h>
+void main()
+{
+        int i,j;
+        char ch='a';
+        printf("Enter right angle triangle shape : \n");
+        for(i=0;i<4;i++)
+        {
+                for(j=0;j<=i;j++)
+                {
+                        printf("%c ",ch++);
+                }
+                printf("\n");
+        }
+}
+```
+## 86.WRITE A C PROGRAM TO FIND THE AREA OF A RECTANGLE GIVEN ITS LENGTH AND BREADTH
+```c
+//area of rectangle
+#include<stdio.h>
+void main()
+{
+        float l,b;
+        printf("Enter length and breadth : ");
+        scanf("%f%f",&l,&b);
+        printf("area of rectangle is : %f\n",l*b);
+}
+```
+## 87.WRITE A C PROGRAM TO FIND THE SUM OF THE CUBES OF THE DIGITS OF A GIVEN NUMBER
+```c
+//sum of the cubes of the digits of numbers
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+        int n,num,r,sum=0;
+        printf("Enter a number : ");
+        scanf("%d",&num);
+        n=num;
+        while(n)
+        {
+                r=n%10;
+                sum=sum+pow(r,3);
+                n/=10;
+        }
+        printf("%d of digits of cubes sum is %d\n",num,sum);
+}
+```
+## 88.WRITE A C PROGRAM TO FIND THE SUM OF THE EVEN DIGITS AND THE SUM OF THE ODD DIGITS SEPARATELY IN A GIVEN NUMBER
+```c
+//sum of even digits and sum of odd digits of given number
+#include<stdio.h>
+void main()
+{
+        int n,r,num,esum=0,osum=0;
+        printf("Enter a number : ");
+        scanf("%d",&num);
+        n=num;
+        while(n)
+        {
+                r=n%10;
+                if(r%2==0)
+                        esum+=r;
+                else
+                        osum+=r;
+                n/=10;
+        }
+        printf("%d number of even sum is : %d\tOdd sum is : %d\n",num,esum,osum);
+}
+```
