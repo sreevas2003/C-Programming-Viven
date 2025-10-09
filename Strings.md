@@ -216,3 +216,53 @@ void main()
         }
         printf("Maximum number of characters is %d\n",mc);
 }
+```
+##  11. Write a C program to sort a string array in ascending order.
+```c
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char temp,str[]="sreenivasulu";
+    int i,j;
+    for(i=0;i<strlen(str);i++)
+    {
+        for(j=i+1;j<strlen(str);j++)
+        {
+            if(str[i]>str[j])
+            {
+                temp=str[i];
+                str[i]=str[j];
+                str[j]=temp;
+            }
+        }
+    }
+    puts(str);
+}
+```
+## 12. Write a program in C to read a string from the keyboard and sort it using bubble sort.
+```c
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char temp,str[50];
+    gets(str);
+    int i,j;
+    for(i=0;i<strlen(str);i++)
+    {
+        for(j=i+1;j<strlen(str);j++)
+        {
+            if(str[i]>str[j])
+            {
+                temp=str[i];
+                str[i]=str[j];
+                str[j]=temp;
+            }
+        }
+    }
+    puts(str);
+}
+```
+## 13. Write a program in C to extract a substring from a given string.
+```c
