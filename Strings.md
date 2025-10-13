@@ -266,3 +266,126 @@ void main()
 ```
 ## 13. Write a program in C to extract a substring from a given string.
 ```c
+```
+## 17. Write a program in C to remove characters from a string except alphabets.
+```c
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+        char temp,str[]="sreenivasulu";
+        int j,i,n=strlen(str);
+        for(i=0;i<n;i++)
+        {
+                for(j=i+1;j<n;j++)
+                {
+                        if(str[i]==str[j])
+                        {
+                                while(j<n)
+                                {
+                                        temp=str[j];
+                                        str[j]=str[j+1];
+                                        str[j+1]=temp;
+                                        j++;
+                                }
+                                str[j]='\0';
+                        }
+                }
+        }
+        puts(str);
+}
+```
+## 18. Write a program in C to find the frequency of characters.
+```c
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+        char temp[50],str[]="sreenivasulu";
+        int c,j,i=0,n=strlen(str);
+        while(i<n)
+                temp[i++]=1;
+
+        for(i=0;i<n;i++)
+        {
+                if(temp[i]==1)
+                {
+                        c=0;
+                        for(j=i;j<n;j++)
+                        {
+                                if(str[i]==str[j])
+                                {
+                                        c++;
+                                        temp[j]=2;
+                                }
+                        }
+                        printf("%c is %d\n",str[i],c);
+                }
+        }
+}
+```
+## 19. Write a program in C to combine two strings manually.
+```c
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+        char str1[30],str2[30],str3[60];
+        printf("Enter string 1:");
+        gets(str1);
+        printf("Enter string 2 : ");
+        gets(str2);
+        int j=0,i=0,k=0,n1=strlen(str1),n2=strlen(str2);
+        while(i<n1)
+                str3[k++]=str1[i++];
+        while(j<n2)
+                str3[k++]=str2[j++];
+        str3[k]='\0';
+        for(i=0;i<k;i++)
+                putchar(str3[i]);
+        printf("\n");
+}
+```
+##  20. Write a program in C to find the largest and smallest words in a string.
+```c
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+        char str[25];
+        printf("Enter a string : ");
+        gets(str);
+        char small,lar;
+        small=lar=str[0];
+        int i;
+        for(i=0;str[i];i++)
+        {
+                if(small>str[i])
+                        small=str[i];
+                if(lar<str[i])
+                        lar=str[i];
+        }
+        putchar(small);
+        printf("\n");
+        putchar(lar);
+        printf("\n");
+}
+```
+## 21. Write a program in C to convert a string to uppercase.
+```c
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+void main()
+{
+        char str[50];
+        printf("Enter a string : ");
+        gets(str);
+        int i=0,n=strlen(str);
+        while(i<n)
+        {
+                str[i]=toupper(str[i]);
+                i++;
+        }
+        puts(str);
+}
