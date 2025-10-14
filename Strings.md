@@ -389,3 +389,120 @@ void main()
         }
         puts(str);
 }
+```
+## 22. Write a program in C to convert a string to lowercase.
+```c
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+void main()
+{
+        char str[50];
+        printf("Enter a string : ");
+        gets(str);
+        int i=0,n=strlen(str);
+        while(i<n)
+        {
+                printf("%c",tolower(str[i]));
+                i++;
+        }
+        printf("\n");
+}
+```
+##  23. Write a program in C to check whether a character is a Hexadecimal Digit or not.
+```c
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+void main()
+{
+        char str[8];
+        printf("enter a num in Hexdecimal : ");
+        gets(str);
+
+        int i,n=strlen(str);
+        int flag=0;
+        for(i=0;i<n;i++)
+        {
+                if((str[i]>=48 && str[i]<=57) || (toupper(str[i])>64 && toupper(str[i])<='F'))
+                        continue;
+                else
+                {
+                        flag=1;
+                        break;
+                }
+        }
+        if(flag==0)
+                printf("It is in hexa form\n");
+        else
+                printf("Not in hexa form\n");
+}
+```
+##  24. Write a program in C to check whether a letter is uppercase or not.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+void main()
+{
+        char str[30];
+        printf("Enter a string :");
+        gets(str);
+        int flag=0,i,n=strlen(str);
+        for(i=0;i<n;i++)
+        {
+                if(isupper(str[i]))
+                        continue;
+                else
+                {
+                        flag=1;
+                        break;
+                }
+        }
+        if(flag==1)
+                printf("Not in upper case\n");
+        else
+                printf("Letter in upper case\n");
+}
+```
+## 25. Write a program in C to replace the spaces in a string with a specific character.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+void main()
+{
+        char str[100],ch;
+        printf("Enter a sentense : ");
+        gets(str);
+        printf("Enter special character : ");
+        scanf("%c",&ch);
+        int i,n=strlen(str);
+        for(i=0;i<n;i++)
+        {
+                if(isspace(str[i]))
+                        str[i]=ch;
+        }
+        puts(str);
+}
+```
+##  26. Write a program in C to count the number of punctuation characters present in a string.
+```c
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+void main()
+{
+        char str[100];
+        printf("Enter a string : ");
+        gets(str);
+        int i,c=0,n=strlen(str);
+        for(i=0;i<n;i++)
+        {
+                if(ispunct(str[i]))
+                        c++;
+        }
+        printf("count of punctuatons is %d\n",c);
+}
+```
+
