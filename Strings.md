@@ -505,4 +505,6 @@ void main()
         printf("count of punctuatons is %d\n",c);
 }
 ```
+## 27. Write a program in C to print only the string before the new line character.
+```c
 
