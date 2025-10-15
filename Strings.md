@@ -71,13 +71,6 @@ void main()
         printf("enter string : ");
         gets(name);
         printf("number of words : %d\n",words(name));
-        int i=0,c=0;
-        while(name[i]!='\0')
-        {
-                c++;
-                i++;
-        }
-        printf("count of characters : %d\n",c);
 }
 int words(char *w)
 {
@@ -87,7 +80,7 @@ int words(char *w)
                 while(isspace(w[j]))
                         j++;
                 i=j;
-                while(w[j]!=' ' && w[j]<='\0')
+                while(w[j]!=' ' && w[j]!='\0')
                 {
                         printf("%c",w[j]);
                         j++;
@@ -132,7 +125,7 @@ void main()
 {
         int sc=0,nc=0,ac=0;
         int i;
-        char str[30]="sreevas2003@g.com";
+        char str[30]="sreevas2003@gmail.com";
         for(i=0;i<strlen(str);i++)
         {
                 if(tolower(str[i])>96 && tolower(str[i])<123)
