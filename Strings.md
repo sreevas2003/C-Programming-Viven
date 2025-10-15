@@ -270,26 +270,26 @@ void main()
 ## 17. Write a program in C to remove characters from a string except alphabets.
 ```c
 #include<stdio.h>
+#include<ctype.h>
 #include<string.h>
 void main()
 {
-        char temp,str[]="sreenivasulu";
-        int j,i,n=strlen(str);
-        for(i=0;i<n;i++)
+        char str[]="sre98eniva25su@lu";
+        int j,i=0,n=strlen(str);
+        while(i<n)
         {
-                for(j=i+1;j<n;j++)
+                if(isalpha(str[i]))
+                        i++;
+                else
                 {
-                        if(str[i]==str[j])
+                        j=i;
+                        while(j<n)
                         {
-                                while(j<n)
-                                {
-                                        temp=str[j];
-                                        str[j]=str[j+1];
-                                        str[j+1]=temp;
-                                        j++;
-                                }
-                                str[j]='\0';
+                                str[j]=str[j+1];
+                                j++;
                         }
+                        str[j]='\0';
+                        n--;
                 }
         }
         puts(str);
@@ -508,3 +508,21 @@ void main()
 ## 27. Write a program in C to print only the string before the new line character.
 ```c
 
+```
+## 28. Write a program in C to check whether a letter is lowercase or not.
+```c
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+void main()
+{
+        char ch;
+        printf("Enter a character :");
+        scanf("%c",&ch);
+        if(ch>64 && ch<91)
+                printf("letter is Upper\n");
+        else
+                printf("Not in upper\n");
+}
+```
+## 
