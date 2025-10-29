@@ -95,4 +95,82 @@ void main()
         printf("count of set bits is %d\n",count);
 }
 ```
+## first value of n bits at starting position P is replace with right most n bits of second value
+```c
+#include<stdio.h>
+void display(int n)
+{
+        int i;
+        for(i=31;i>=0;i--)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+int fun(int x,int y,int p,int n)
+{
+        int m=~((~0<<n))<<p-n+1;
+        x&=~m;
+        return x| ((y<<p-n+1)&m);
+}
+
+void main()
+{
+        int x,y,pos,bit;
+        printf("Enter X value : ");
+        scanf("%i",&x);
+        printf("Enter Y value : ");
+        scanf("%i",&y);
+        display(x);
+        display(y);
+        printf("Enter position : ");
+        scanf("%d",&pos);
+        printf("Enter no of bits : ");
+        scanf("%d",&bit);
+
+        x=fun(x,y,pos,bit);
+        display(x);
+}
+```
+## first value of n bits at starting position P is replace with n bits of second value at same position
+```c
+
+#include<stdio.h>
+void display(int n)
+{
+        int i;
+        for(i=31;i>=0;i--)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+int fun(int x,int y,int p,int n)
+{
+        int m=~((~0<<n))<<p-n+1;
+        x&=~m;
+        return x| (y&m);
+}
+
+void main()
+{
+        int x,y,pos,bit;
+        printf("Enter X value : ");
+        scanf("%i",&x);
+        printf("Enter Y value : ");
+        scanf("%i",&y);
+        display(x);
+        display(y);
+        printf("Enter position : ");
+        scanf("%d",&pos);
+        printf("Enter no of bits : ");
+        scanf("%d",&bit);
+        x=fun(x,y,pos,bit);
+        display(x);
+}
+```
 ## 
