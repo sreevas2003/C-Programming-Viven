@@ -173,4 +173,34 @@ void main()
         display(x);
 }
 ```
-## 
+## Write a program to manipulate bits from i position to j position
+```c
+#include<stdio.h>
+void display(int n)
+{
+        int i;
+        for(i=31;i>=0;i--)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+void main()
+{
+        int num,f,t;
+        printf("Enter a Number : ");
+        scanf("%i",&num);
+        printf("From and to : ");
+        scanf("%d%*c%d",&f,&t);
+        display(num);
+        int m=~(~0<<t-f+1)<<f;
+        //to set
+        display(num|m);
+        //to clear
+        display(num&m);
+        //to invert
+        display(num^m);
+}
+```
