@@ -204,3 +204,126 @@ void main()
         display(num^m);
 }
 ```
+## swap two variables using bitwise operator
+```c
+#include<stdio.h>
+void main()
+{
+        int x,y;
+        printf("Enter X and Y : ");
+        scanf("%d%d",&x,&y);
+        printf("x=%d and y=%d\n",x,y);
+        x=x^y;
+        y=x^y;
+        x=x^y;
+        printf("x=%d and y=%d\n",x,y);
+}
+```
+## find Two's Compliment of a Number
+```c
+#include<stdio.h>
+void display(int n)
+{
+        int i;
+        for(i=31;i>=0;i--)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+void main()
+{
+        int num;
+        printf("Enter a Number : ");
+        scanf("%d",&num);
+        display(num);
+        printf("Two's compliment is : ");
+        display(~num+1);
+        int i;
+        for(i=0;i<32;i++)
+        {
+                if((num&(1<<i))!=0)
+                        break;
+        }
+        for(i=i+1;i<32;i++)
+                num=num^1<<i;
+        printf("Two's compliment : ");
+
+        display(num);
+}
+```
+## find next highest power of 2
+```c
+
+#include<stdio.h>
+void display(int n)
+{
+        int i;
+        for(i=31;i>=0;i--)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+int nexthigh(int n)
+{
+        if(n&&!(n&(n-1)))
+                return n;
+        int i=-1;
+        while(n)
+        {
+                n=n>>1;
+                i++;
+        }
+        return 1<<i+1;
+}
+void main()
+{
+        int num;
+        printf("Enter a Number : ");
+        scanf("%d",&num);
+        display(num);
+        display(nexthigh(num));
+        printf("%d\n",nexthigh(num));
+}
+```
+## right and left Rotations of N bits of a Number
+```c
+#include<stdio.h>
+void display(int n)
+{
+        int i;
+        for(i=31;i>=0;i--)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+int rightrotate(int num,int n)
+{
+        return ((num>>n)|(num<<32-n));
+}
+int leftrotate(int num,int n)
+{
+        return ((num<<n)|(num>>32-n));
+}
+void main()
+{
+        int n,num;
+        printf("Enter a Number : ");
+        scanf("%d",&num);
+        display(num);
+        printf("Enter rotation bits : ");
+        scanf("%d",&n);
+        n%=32;
+        display(rightrotate(num,n));
+        display(leftrotate(num,n));
+}
+```
+
