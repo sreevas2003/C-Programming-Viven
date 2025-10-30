@@ -326,4 +326,38 @@ void main()
         display(leftrotate(num,n));
 }
 ```
+## reverse a Number
+```c
+#include<stdio.h>
+void display(int n)
+{
+        int i;
+        for(i=31;i>=0;i--)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+void reverse(int n)
+{
+        int i;
+        for(i=0;i<32;i++)
+        {
+                printf("%d",(n>>i)&1);
+                if(i%8==0 && i!=0)
+                        printf(" ");
+        }
+        printf("\n");
+}
+void main()
+{
+        int num;
+        printf("Enter a Number : ");
+        scanf("%d",&num);
+        display(num);
+        reverse(num);
+}
+```
 
